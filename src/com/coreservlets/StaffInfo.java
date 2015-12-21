@@ -14,6 +14,17 @@ public class StaffInfo {
 		StaffID = staffID;
 		Phone = phone;
 	}
+	
+	public StaffInfo() {
+		super();
+		this.Surname = "";
+		this.Forename = "";
+		this.Address = "";
+		this.Email = "";
+		this.Phone = "";
+		this.StaffID = 0;
+
+	}
 
 	public int getStaffID() {
 		return StaffID;

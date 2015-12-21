@@ -12,8 +12,7 @@
 	<div align="center">
 		<table border="5">
 			<tr>
-				<th class="title">Staff Web Service - Get Staff Data in XML,
-					Json & Text</th>
+				<th class="title">Staff Web Service - Get Staff Data in XML, Json & Text</th>
 			</tr>
 		</table>
 		<p />
@@ -21,7 +20,7 @@
 
 		<fieldset>
 			<form action="#">
-				<legend>Get All Staff</legend>
+				<legend>    Get All Staff   </legend>
 				<br /> <label for="data-type">Retrieve Data in XML, Json or
 					String:</label> <select id="format">
 					<option value="xml" selected="selected">XML</option>
@@ -52,6 +51,26 @@
 					onclick='getStaffMember("firstname", "lastname", "individual", "staff_result")' />
 			</form>
 			<div id="staff_result"></div>
+		</fieldset>
+		
+		
+		<fieldset>
+			<form action="#">
+				<legend>Add Staff Members</legend>
+				<label>First name: <input type="text" id="forename" /> </label> 
+				<br /> 
+				<label>Last name: <input type="text" id="surname" /></label>
+				<br /> 
+				<label>Email: <input type="text" id="email" /></label>
+				<br /> 
+				<label>Phone Number: <input type="text" id="phone_num" /></label>
+				<br /> 
+				<label>Address: <input type="text" id="address" /></label>
+				<br /> 
+				<input type="button" value="Add Staff"
+					onclick='addStaffMember("forename", "surname", "email", "phone_num", "address", "staff_result_add")' />
+			</form>
+			<div id="staff_result_add"></div>
 		</fieldset>
 
 	</div>

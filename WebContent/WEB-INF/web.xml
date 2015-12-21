@@ -16,6 +16,15 @@
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>Add Staff Servlet</servlet-name>
+		<servlet-class>com.dunn.servlets.AddStaffMemberServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Add Staff Servlet</servlet-name>
+		<url-pattern>/add-staff-member</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>Staff Member Servlet</servlet-name>
 		<servlet-class>com.coreservlets.FindStaffByName</servlet-class>
 	</servlet>

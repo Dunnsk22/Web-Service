@@ -2,6 +2,7 @@ package com.coreservlets;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -17,14 +18,12 @@ public class ConnectToMySQL {
 	private static String password = "grustpOl8";
 	private static String url = "jdbc:mysql://mudfoot.doc.stu.mmu.ac.uk:3306/" + user;
 
-	public static Map<String, StaffInfo> getStaffMembers() {
-
+	public static Map<String,StaffInfo> getStaffMembers() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-
 		// get a connection with the user/pass
 		try {
 			conn = DriverManager.getConnection(url, user, password);
@@ -33,13 +32,9 @@ public class ConnectToMySQL {
 		} catch (SQLException se) {
 			System.out.println("DEBUG: Failed to connect: " + se);
 		}
-
 		String selectSQL = null;
-
 		selectSQL = "select * from staff_info;";
-
 		sampleStaff = new LinkedHashMap<String, StaffInfo>();
-
 		try {
 			ResultSet results = stmt.executeQuery(selectSQL);
 			while (results.next()) {
@@ -53,5 +48,6 @@ public class ConnectToMySQL {
 		}
 
 		return sampleStaff;
-	}
+	}		
+		
 }
