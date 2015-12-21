@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+	<!-- Use the URL http://hostname/appname/show-customers for the CustomerList 
+		servlet. -->
+	<servlet>
+		<servlet-name>All Staff Servlet</servlet-name>
+		<servlet-class>com.coreservlets.FindStaff</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>All Staff Servlet</servlet-name>
+		<url-pattern>/find-all-staff</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Staff Member Servlet</servlet-name>
+		<servlet-class>com.coreservlets.FindStaffByName</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Staff Member Servlet</servlet-name>
+		<url-pattern>/find-staff-member</url-pattern>
+	</servlet-mapping>
+
+	<!-- Use the URL http://host/app/find-customer-by-id instead of http://host/app/servlet/coreservlets.FindCustomerByID -->
+	<servlet>
+		<servlet-name>Find Customer with Given ID</servlet-name>
+		<servlet-class>com.coreservlets.FindStaffByID</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Find Customer with Given ID</servlet-name>
+		<url-pattern>/find-staff-by-id</url-pattern>
+	</servlet-mapping>
+
+	<!-- Use the URL http://host/app/find-customer-by-name instead of http://host/app/servlet/coreservlets.FindCustomerByName -->
+	<servlet>
+		<servlet-name>Find Customer with Given Name</servlet-name>
+		<servlet-class>com.coreservlets.FindStaffByName</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Find Customer with Given Name</servlet-name>
+		<url-pattern>/find-staff-by-name</url-pattern>
+	</servlet-mapping>
+
+
+	<!-- Use the URL http://host/app/find-customer-by-name instead of http://host/app/servlet/coreservlets.FindCustomerByName -->
+	<servlet>
+		<servlet-name>Find Customer with Given Name XML</servlet-name>
+		<servlet-class>com.coreservlets.FindStaffByNameXML</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Find Customer with Given Name XML</servlet-name>
+		<url-pattern>/find-staff-by-name-xml</url-pattern>
+	</servlet-mapping>
+
+	<!-- If URL gives a directory but no filename, try index.jsp first and index.html 
+		second. If neither is found, the result is server-specific (e.g., a directory 
+		listing or a 404 error). -->
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+</web-app>
